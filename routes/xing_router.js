@@ -5,6 +5,7 @@
 // 將app需要include的route放置同一個檔案處理
 
 var indexRouter = require('./index');
+var startVueRouter = require('./vue')
 
 function XingRouter(app) {
     this.app = app;
@@ -13,6 +14,12 @@ function XingRouter(app) {
 XingRouter.prototype.listen_routes = function() {
 
     this.app.use('/', indexRouter);
+}
+
+
+XingRouter.prototype.listen_routes = function() {
+
+    this.app.use('/vuejs', startVueRouter);
 }
 
 module.exports = XingRouter;
