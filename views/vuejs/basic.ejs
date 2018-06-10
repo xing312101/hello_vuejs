@@ -1,0 +1,50 @@
+<%-
+// Author: Lee, Yu-Xing (李俞興)
+// version: 0.0.0
+// created at: 2018年6月7日 (JUN. 07, 2017)
+// referenc: https://vuejs.org
+%>
+<%- include ../header.ejs %>
+
+
+<div id="app_declarative_rendering">
+  {{ message }}
+  
+  <span v-bind:title="span_title">
+    edit span title
+  </span>
+</div>
+
+<div id="app_conditionals_and_loops">
+  <span v-if="seen">Do you really see the man which named xing312101 ?</span>
+  <div>
+    <ol>
+      <li v-for="person in people">
+        {{ person.say }}
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div id="app_handle_user_input">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">See ?</button>
+  <p>{{ answer }}</p>
+  <input v-model="answer">
+</div>
+
+
+<div id="app_composing_with_componets">
+  <div>
+      <ol>
+        <which-you-go
+          v-for="location in locations"
+          v-bind:place="location"
+          v-bind:key="location.id"
+        ></which-you-go>
+      </ol>
+  </div>
+</div>
+
+<%- include ./basic_includes.ejs %>
+<%- include ../footer.ejs %>

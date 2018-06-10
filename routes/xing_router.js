@@ -19,7 +19,7 @@ XingRouter.prototype.listen_routes = function() {
 
 XingRouter.prototype.listen_routes = function() {
 
-    this.app.use('/vuejs', startVueRouter);
+    this.app.use('/basic', startVueRouter);
 }
 
 module.exports = XingRouter;
